@@ -10,6 +10,5 @@ const sequelize = new Sequelize({
 });
 
 const models = applyModels(sequelize);
-console.log("models", models);
 
 module.exports = { models };
