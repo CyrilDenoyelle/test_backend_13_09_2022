@@ -1,11 +1,15 @@
-const sqlite3 = require("sqlite3").verbose();
+const { Sequelize } = require("sequelize");
+const applyModels = require("./models");
 
-const db = new sqlite3.Database("./DATABASE.sqlite", (err) => {
-  if (err) {
-    console.error(`[app/db.js]: ${err.message}`);
-  } else {
-    console.log("Connected to DATABASE.sqlite");
-  }
+const sequelize = new Sequelize({
+  dialect: "sqlite",
+  storage: "./DATABASE.sqlite",
+  define: {
+    timestamps: false,
+  },
 });
 
-module.exports = db;
+const models = applyModels(sequelize);
+console.log("models", models);
+
+module.exports = { models };
