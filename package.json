@@ -19,6 +19,7 @@
   "homepage": "https://github.com/CyrilDenoyelle/test_backend_13_09_2022#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "sqlite3": "^5.0.11"
+    "sqlite3": "^5.0.11",
+    "express-session": "^1.17.3"
   }
 }
